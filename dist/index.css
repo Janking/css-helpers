@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/**
+ * css-helpers 入口文件
+ */
+/**
+ * [gradient] : 背景透明度，不影响字体
+ *
+ * @param  {[color]} 		$bgColor         [色值，如：'#ff6600']
+ * @param  {[Number]} 		$bgOpacity       [透明度，如：0.8 = 80%]
+ * @param  {[Boolean]} 		$compatible 	 [是否兼容IE8]
+ */
+/**
+ * [opacity] : 透明度，影响字体
+ * @param  {[Number]} 		$opacity          [透明度，如：0.8 = 80%]
+ * @param  {[Boolean]} 		$compatible 	  [是否兼容IE7]
+ */
+/**
+ * [position] : 定位,顺时针的四个参数，若要跳过，则输入false
+ * @param  {[Number,Pixel]}	$top
+ * @param  {[Number,Pixel]}	$right
+ * @param  {[Number,Pixel]}	$bottom
+ * @param  {[Number,Pixel]}	$left
+ */
+/**
+ * [user-select]   手机端长按发生系统事件（常用于禁止复制）
+ * @param {[String]} $select [对应取值：none，text，all，element]
+ */
+/**
+ * [mobile-font-init] : 移动端字体初始化设置
+ *
+ * #example :
+ *
+ * 例如750px设计稿上320px*200px字体大小为32px的区域样式为：
+ *
+ * .div_ex{ width:3.2rem; height:2rem; font-size:0.32rem }
+ *
+ * 更多例子请查看 /examples/index.html
+ *
+ */
+/**
+ * [ellipsis] : 文本超出用「...」代替
+ */
+/**
+ * [movie-fluid]   响应式视频
+ */
+/**
+ * [abs-center]   移动端不定宽高元素水平垂直居中于最近的position:relative父元素，不传$offset则占据父元素宽高
+ * @param {[Number,Pixel]} $offset [子元素与父元素边距，如：10px]
+ */
+/**
+ * examples/index.html
+ */
+/* line 16, ../src/_widget.scss */
+html {
+  font-size: 312.5%;
+}
+
+@media screen and (max-width: 359px) and (orientation: portrait) {
+  /* line 20, ../src/_widget.scss */
+  html {
+    font-size: 266.67%;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 374px) and (orientation: portrait) {
+  /* line 25, ../src/_widget.scss */
+  html {
+    font-size: 300%;
+  }
+}
+@media screen and (min-width: 384px) and (max-width: 399px) and (orientation: portrait) {
+  /* line 30, ../src/_widget.scss */
+  html {
+    font-size: 320%;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 413px) and (orientation: portrait) {
+  /* line 35, ../src/_widget.scss */
+  html {
+    font-size: 333.33%;
+  }
+}
+@media screen and (min-width: 414px) and (max-width: 431px) and (orientation: portrait) {
+  /* line 40, ../src/_widget.scss */
+  html {
+    font-size: 345%;
+  }
+}
+@media screen and (min-width: 432px) and (max-width: 479px) and (orientation: portrait) {
+  /* line 45, ../src/_widget.scss */
+  html {
+    font-size: 360%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 639px) and (orientation: portrait) {
+  /* line 50, ../src/_widget.scss */
+  html {
+    font-size: 400%;
+  }
+}
+@media screen and (min-width: 640px) and (orientation: portrait) {
+  /* line 55, ../src/_widget.scss */
+  html {
+    font-size: 533.33%;
+  }
+}
+/**
+ * examples/widget.html
+ */
+/**mobile-positio实例***********************/
+/* line 25, ../src/index.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 31, ../src/index.scss */
+.box {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* line 37, ../src/index.scss */
+#abs-center {
+  background: #fff;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}

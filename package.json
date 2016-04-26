@@ -1,0 +1,27 @@
+{
+  "name": "css-helpers",
+  "version": "0.0.1",
+  "description": "Css-helpers 是基于sass开发的一套辅助工具，致力于解决前端日常开发中枯燥繁琐的css编写",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "''"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Janking/css-helpers.git"
+  },
+  "keywords": [
+    "sass_widgets",
+    "sass_animate",
+    "sass_functions"
+  ],
+  "author": "Infinite-f2e group",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Janking/css-helpers/issues"
+  },
+  "homepage": "https://github.com/Janking/css-helpers#readme"
+}

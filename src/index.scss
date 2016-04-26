@@ -1,0 +1,40 @@
+@charset "utf-8";
+/**
+ * css-helpers 入口文件
+ */
+
+@import "core";
+
+@import "widget";
+
+@import "animate";
+
+
+
+/**
+ * examples/index.html
+ */
+@include mobile-font-init();
+
+
+/**
+ * examples/widget.html
+ */
+
+/**mobile-positio实例***********************/
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.box{
+	position: relative;
+	width: 100%;
+	height: 200px;
+	@include gradient(#000000,.6);
+}
+#abs-center{
+	background: #fff;
+	@include abs-center(10px);
+}
