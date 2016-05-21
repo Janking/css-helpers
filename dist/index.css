@@ -26,6 +26,10 @@
  * @param {[String]} $select [对应取值：none，text，all，element]
  */
 /**
+ * [border-radius]   四边圆角
+ * @param {[Number,pixel]} $radius [圆角半径，如：'50%','5px']
+ */
+/**
  * [mobile-font-init] : 移动端字体初始化设置
  *
  * #example :
@@ -46,6 +50,43 @@
 /**
  * [abs-center]   移动端不定宽高元素水平垂直居中于最近的position:relative父元素，不传$offset则占据父元素宽高
  * @param {[Number,Pixel]} $offset [子元素与父元素边距，如：10px]
+ */
+/**
+ * [triangle]   
+ * @param {[String]}        $direction [三角形尖角方向，如：'up','right','down','left']
+ * @param {[Number,Pixel]}  $w         [三角形底边长度（尖角对边），如：10px]
+ * @param {[Number,Pixel]}  $h         [三角形高（与底边垂直），如：20px]
+ * @param {[color]}         $bgColor      [背景色值，如：#bbbbbb]
+ * @param {[String]}        $pseudo    [定义伪元素类型，如：'after','before']
+ */
+/**
+ * [btn]   注：hover样式自定义
+ * @param {[Number,Pixel]} $w          [按钮宽，如120px]
+ * @param {[Number,Pixel]} $h          [按钮高，如40px]
+ * @param {[Number,Pixel]} $radius     [按钮圆角半径，如：5px]
+ * @param {[Number,Pixel]} $fontSize        [字体大小，如：16px]
+ * @param {[color]}        $c          [字体颜色，如：#fff]
+ * @param {[color]}        $bgColor       [背景颜色，如：#f00]
+ */
+/**
+ * [loading1]   注：loadingWidth 定义在before，若引入动画需配合@keyframes kf-loading1同步修改loadingWidth值
+ * @param {[Number,Pixel]} $w                [容器宽，如100%，120px]
+ * @param {[Number,Pixel]} $h                [容器高，如30px]
+ * @param {[Number,Pixel]} $loadingWidth     [进度条宽，如：70%,100px]
+ * @param {[Number,Pixel]} $bgColor          [容器背景色值，如#fff]
+ * @param {[color]}        $startColor       [进度条起始渐变色值，如：#fff]
+ * @param {[color]}        $endColor         [进度条结束渐变色值，如：#f00]
+ */
+/**
+ * [kf-loading1]   注：非必须，为loading1引入动画，引入位置：最外层
+ * @param {[Number,Pixel]} $loadingWidth     [进度条宽，如：70%,100px]
+*/
+/**
+ * [loading2]   注：
+ * @param {[Number,Pixel]} $inRadius         [内圆半径，如：80px]
+ * @param {[Number,Pixel]} $outRadius        [外圆半径，如：100px]
+ * @param {[color]}        $bgColor          [容器背景色值，如#fff]
+ * @param {[color]}        $borderColor      [圆环色值，如：#fff]
  */
 /**
  * examples/index.html
@@ -106,29 +147,281 @@ html {
 /**
  * examples/widget.html
  */
-/**mobile-positio实例***********************/
-/* line 25, ../src/index.scss */
+/* line 24, ../src/index.scss */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1em;
 }
 
 /* line 31, ../src/index.scss */
 .box {
   position: relative;
-  width: 100%;
-  height: 200px;
+  width: 80%;
+  margin: 10px auto;
+  min-height: 100px;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 37, ../src/index.scss */
-#abs-center {
+/**abs-center实例***********************/
+/* line 40, ../src/index.scss */
+.abs-center {
   background: #fff;
   display: block;
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+}
+
+/**btn实例***********************/
+/* line 46, ../src/index.scss */
+.btn {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  color: #fff;
+  background: #f86288;
+  font-weight: 400;
+  text-align: center;
+  border: 0;
+  outline: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/**triangle实例***********************/
+/* line 51, ../src/index.scss */
+.triangle {
+  width: 140px;
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  border: 1px solid #aaa;
+}
+/* line 57, ../src/index.scss */
+.triangle.default {
+  display: inline-block;
+  position: relative;
+}
+/* line 113, ../src/_widget.scss */
+.triangle.default:after {
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  right: 7.5px;
+  margin-top: -7.5px;
+  border-top: 15px solid #55cbe3;
+  border-right: 7.5px solid transparent;
+  border-left: 7.5px solid transparent;
+}
+/* line 60, ../src/index.scss */
+.triangle.up {
+  display: inline-block;
+  position: relative;
+}
+/* line 113, ../src/_widget.scss */
+.triangle.up:after {
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  right: 7.5px;
+  margin-top: -7.5px;
+  border-bottom: 15px solid #55cbe3;
+  border-right: 7.5px solid transparent;
+  border-left: 7.5px solid transparent;
+}
+/* line 63, ../src/index.scss */
+.triangle.right {
+  display: inline-block;
+  position: relative;
+}
+/* line 113, ../src/_widget.scss */
+.triangle.right:after {
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  right: 7.5px;
+  margin-top: -7.5px;
+  border-left: 15px solid #55cbe3;
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+}
+/* line 66, ../src/index.scss */
+.triangle.down {
+  display: inline-block;
+  position: relative;
+}
+/* line 113, ../src/_widget.scss */
+.triangle.down:after {
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  right: 7.5px;
+  margin-top: -7.5px;
+  border-top: 15px solid #55cbe3;
+  border-right: 7.5px solid transparent;
+  border-left: 7.5px solid transparent;
+}
+/* line 69, ../src/index.scss */
+.triangle.left {
+  display: inline-block;
+  position: relative;
+}
+/* line 113, ../src/_widget.scss */
+.triangle.left:after {
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  right: 7.5px;
+  margin-top: -7.5px;
+  border-right: 15px solid #55cbe3;
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+}
+
+/**loading1实例***********************/
+/* line 75, ../src/index.scss */
+#loading1 {
+  position: relative;
+  width: 50%;
+  height: 30px;
+  background: #fff;
+  overflow: hidden;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -o-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  border-radius: 15px;
+}
+/* line 187, ../src/_widget.scss */
+#loading1:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 70%;
+  height: 100%;
+  background: #2989d8;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #2989d8 33%, #7db9e8 34%, #7db9e8 59%, #2989d8 60%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(33%, #2989d8), color-stop(34%, #7db9e8), color-stop(59%, #7db9e8), color-stop(60%, #2989d8));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg, #2989d8 33%, #7db9e8 34%, #7db9e8 59%, #2989d8 60%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg, #2989d8 33%, #7db9e8 34%, #7db9e8 59%, #2989d8 60%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg, #2989d8 33%, #7db9e8 34%, #7db9e8 59%, #2989d8 60%);
+  /* IE10+ */
+  background: linear-gradient(45deg, #2989d8 33%, #7db9e8 34%, #7db9e8 59%, #2989d8 60%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$startColor, endColorstr=$endColor,GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  background-size: 60px 30px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -o-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-animation: loading1 1s linear;
+  animation: loading1 1s linear;
+}
+
+@-webkit-keyframes loading1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes loading1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+/* line 80, ../src/index.scss */
+#loading2 {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: transparent;
+}
+/* line 237, ../src/_widget.scss */
+#loading2 .circleBox {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 200px;
+  overflow: hidden;
+}
+/* line 243, ../src/_widget.scss */
+#loading2 .circleBox.left {
+  left: 0;
+}
+/* line 246, ../src/_widget.scss */
+#loading2 .circleBox.right {
+  right: 0;
+}
+/* line 249, ../src/_widget.scss */
+#loading2 .circleBox .circle {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 20px solid transparent;
+  background: #2989d8;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -o-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -khtml-border-radius: 100px;
+  border-radius: 100px;
+}
+/* line 256, ../src/_widget.scss */
+#loading2 .circleBox .circle.left {
+  left: 0;
+  border-bottom: 20px solid #7db9e8;
+  border-left: 20px solid #7db9e8;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 264, ../src/_widget.scss */
+#loading2 .circleBox .circle.right {
+  right: 0;
+  border-top: 20px solid #7db9e8;
+  border-right: 20px solid #7db9e8;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
