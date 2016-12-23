@@ -1,10 +1,7 @@
-<style type="text/css">
-body{
-	width: 800px;
-}
-</style>
-Sass新结构树
+Sass结构树
 ============
+
+###
 
 * sass
 	* _variable.scss            						`config/variable/sources...`
