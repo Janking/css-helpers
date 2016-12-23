@@ -3,68 +3,70 @@ body{
 	width: 800px;
 }
 </style>
-研发Sass结构改版讨论
+Sass新结构树
 ============
 
-
-###改版目的
-- [x] 降低项目结构的耦合度。
-- [x] 降低项目开发的参与门槛。
-- [x] 增强自动化构建的灵活度。
-
-
-###Sass新结构树
-
 * sass
-	* bootstrap/foundation 							`UI框架`
-
-	* _variables.scss 		  						`全局变量及资源路径等`
-
-	* tools											`工具集合`
-		* _functions.scss   						`原子方法`
-		* _mixins.scss      						`原子宏`
-		* _utilities.scss   						`text-align,margin,padding,line-height,position,float,display`
-		* _helpers.scss      						`多边形生成器,垂直居中器,Media Query,ellipsis,movie-fluid...`
-
+	* _variable.scss            						`config/variable/sources...`
+	* tool
+		* functions
+			- [x] _px-to-em.scss
+			- [x] _px-to-rem.scss
+			- [x] _strip-units.scss
+			- [x] _unpack.scss
+		* mixins
+			* animation
+				- [x] _animation.scss
+				- [x] _backface-visibility.scss
+				- [x] _keyframes.scss
+				- [x] _perspective.scss
+				- [x] _transition.scss
+			* form
+				- [x] _apperance.scss
+				- [x] _button.scss
+				- [x] _placeholder.scss
+				- [x] _user-select.scss
+			* media
+				- [x] _hidipi-media-query.scss
+			* typography
+				- [x] _flexbox.scss
+				- [x] _margin.scss
+				- [x] _padding.scss
+				- [x] _position.scss
+				- [x] _selection.scss
+		* helpers
+			- [x] _clearfix.scss
+			- [x] _ellipsis.scss
+			- [x] _timing-functions.scss
+			- [x] _triangle.scss
+			- [x] _vertical-center.scss
+		* _index.scss
 	* browser
-		* _normalize.scss   						`如果是大型项目,对各设备的样式要求一致,则选normalize`
-		* _reset.scss		  						`如果是小项目或活动页,则选择reset`
+		- [x] _normalize.scss
+		- [x] _reset.scss
 
 	* _base.scss            						`对html,body,a,ul,ol,h1~h6等原始样式作项目VI要求的处理`
 
-	* components      								`组件文件夹`
-		* _pagination.scss                          `分页组件`
-		* _dropdown.scss                            `下拉菜单组件`
-		* _alert.scss                               `提示组件`
-		* _buttons.scss	  							`按钮组件`
+	* component      								`组件文件夹`
 		* _tables.scss	  							`表格组件`
 		* _tabs.scss                                `选项卡组件`
 		* ...
 
-	* layout										`存放公共布局样式`
-		* _grids.scss        						`栅格系统`
-		* _navigator.scss							`导航样式`
-		* _header.scss 								`页头样式`
-		* _footer.scss 								`页脚样式`
-		* _forms.scss		  						`表单样式`
-		* _sidebar.scss 							`边栏`
-		* ...
+	* layout										`存放公共布局样式,例如:`
 
-	* verdors		  								`第三方插件`
+	* verdor		  								`第三方插件,例如:`
 		* _iui.scss
 		* _summernote.scss
 		* _webuploader.scss
 		* ...
 
-	* pages           								`业务页面样式`
+	* page          								`业务页面样式,例如:`
 		* _home.scss                                `首页`
-		* _article.scss                             `文章页`
-		* _concat.scss                              `联系我们`
 
-	* inbox                                         `沙盒`
+	* inbox                                         `沙盒,例如:`
 		* _[developer name].scss 					`其他成员参与开发,以开发者名字命名`
 
-	* style           								`入口文件`
+	* style.scss           							`入口文件`
 
 
 ###代码规范
@@ -74,12 +76,12 @@ body{
 
 ```
 
-//正确的写法
+//good
 .hotel-title {
  font-weight: bold;
 }
 
-//不推荐的写法
+//bad
 .hotelTitle {
  font-weight: bold;
 }
@@ -90,7 +92,7 @@ body{
 
 
  ```css
-  /* 推荐的写法 */
+  /* good */
  a.btn,
  input.btn,
  input[type="button"] {
@@ -167,4 +169,3 @@ Class名称|命名|Class名称|命名
 报错	|error||
 
 
-### 题外话：一个优质前端应该具备哪些风格？
