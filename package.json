@@ -1,27 +1,18 @@
 {
-  "name": "css-helpers",
-  "version": "0.0.1",
-  "description": "Css-helpers 是基于sass开发的一套辅助工具，致力于解决前端日常开发中枯燥繁琐的css编写",
+  "name": "architecture-sass",
+  "version": "2.0.0",
+  "description": "new sass architecture in Infinte.net.cn",
   "main": "index.js",
-  "directories": {
-    "example": "examples"
-  },
   "scripts": {
-    "test": "''"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Janking/css-helpers.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "sass_widgets",
-    "sass_animate",
-    "sass_functions"
+    "sass",
+    "architecture"
   ],
-  "author": "Infinite-f2e group",
+  "author": "Infinite F2E-group",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Janking/css-helpers/issues"
-  },
-  "homepage": "https://github.com/Janking/css-helpers#readme"
+  "dependencies": {
+    "gulp-sass": "^3.0.0"
+  }
 }
