@@ -1,9 +1,19 @@
 Sass结构树
 ============
 
-###
+###Usage
+```
+git clone https://github.com/Janking/css-helpers.git && cd css-helpers
 
-* sass
+npm install
+
+gulp watch:sass
+
+```
+
+### Structure tree
+
+* css-helpers
 	* _variable.scss            						`config/variable/sources...`
 	* tool
 		* functions
@@ -31,6 +41,9 @@ Sass结构树
 				- [x] _padding.scss
 				- [x] _position.scss
 				- [x] _selection.scss
+		* utilities
+			* susy                                   `require susy2 | http://susy.oddbird.net/`
+			- [x] _prefixer.scss
 		* helpers
 			- [x] _clearfix.scss
 			- [x] _ellipsis.scss
