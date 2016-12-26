@@ -15,6 +15,9 @@ $em-base: 16px !default;
 @import "mixins/utilities/prefixer";
 @import "mixins/utilities/susy/index";
 
+// mixins color
+@import "mixins/color/background-color-opacity";
+
 
 // mixins typography
 @import "mixins/typography/margin";
